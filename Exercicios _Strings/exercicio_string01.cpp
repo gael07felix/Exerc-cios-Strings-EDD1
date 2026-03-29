@@ -22,25 +22,20 @@ int main()
     int linhaInicial = 5;
     int linhaFinal = 20;
 
-    // Centralizar
     int colunaInicial = (larguraTela - msg.size()) / 2;
 
-    // Mostrar mensagem na linha 5
     gotoxy(colunaInicial, linhaInicial);
     cout << msg;
 
-    Sleep(1000); // pausa antes de começar
+    Sleep(1000); 
 
-    // Fazer efeito de cascata
     for (int i = 0; i < msg.size(); i++)
     {
         for (int linha = linhaInicial; linha <= linhaFinal; linha++)
         {
-            // Apaga posição anterior
             gotoxy(colunaInicial + i, linha - 1);
             cout << " ";
 
-            // Desenha na nova posição
             gotoxy(colunaInicial + i, linha);
             cout << msg[i];
 
@@ -48,7 +43,6 @@ int main()
         }
     }
 
-    // Garantir mensagem final na linha 20
     gotoxy(colunaInicial, linhaFinal);
     cout << msg;
 
